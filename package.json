@@ -1,0 +1,15 @@
+{
+  "name": "ldap_search_node",
+  "version": "1.0.0",
+  "description": "Search ldap.sk.ee by Estonian personal codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Siim Kibus",
+  "license": "ISC",
+  "dependencies": {
+    "ldapjs": "^1.0.0",
+    "prompt": "^1.0.0"
+  }
+}
