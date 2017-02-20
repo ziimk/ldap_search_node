@@ -1,15 +1,15 @@
-var ldap = require('ldapjs');
-var client = ldap.createClient({
+const ldap = require('ldapjs');
+const client = ldap.createClient({
     url: 'ldap://ldap.sk.ee:389'
 });
 
 function getEntries(personalCode) {
     return new Promise((resolve, reject) => {
-        var opts = {
+        const opts = {
             filter: '(serialNumber=' + personalCode + ')',
             scope: 'sub'
         };
-        var entries = [];
+        const entries = [];
 
         client.search('c=EE', opts, (err, res) => {
             if (err) {

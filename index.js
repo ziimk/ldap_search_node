@@ -1,8 +1,8 @@
-var ldapHandler = require('./src/ldap');
-var prompt = require('prompt');
+const ldapHandler = require('./src/ldap');
+const prompt = require('prompt');
 
 // Very basic input checking
-var schema = {
+const schema = {
     properties: {
         personalCode: {
             pattern: /^[1-6][0-9]{10}$/,
@@ -20,7 +20,7 @@ prompt.get(schema, (err, input) => {
                 console.log('Found ' + result.length + ' certificates');
 
                 if (result.length) {
-                    var name = result[0]['cn'].split(',');
+                    const name = result[0]['cn'].split(',');
                     console.log('Name: ' + name[1] + ' ' + name[0]);
                 }
             })
