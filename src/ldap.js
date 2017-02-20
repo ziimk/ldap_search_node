@@ -6,7 +6,7 @@ const client = ldap.createClient({
 function getEntries(personalCode) {
     return new Promise((resolve, reject) => {
         const opts = {
-            filter: '(serialNumber=' + personalCode + ')',
+            filter: `(serialNumber=${personalCode})`,
             scope: 'sub'
         };
         const entries = [];

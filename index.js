@@ -17,15 +17,15 @@ prompt.get(schema, (err, input) => {
     if (!err) {
         ldapHandler.getEntries(input.personalCode)
             .then(result => {
-                console.log('Found ' + result.length + ' certificates');
+                console.log(`Found ${result.length} certificates`);
 
                 if (result.length) {
                     const name = result[0]['cn'].split(',');
-                    console.log('Name: ' + name[1] + ' ' + name[0]);
+                    console.log(`Name: ${name[1]} ${name[0]}`);
                 }
             })
             .catch(err => {
-                console.log('Error: ' + err);
+                console.log('Error:', err);
             });
     } else {
         console.log(err.message);
